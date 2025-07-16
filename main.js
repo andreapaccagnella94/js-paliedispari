@@ -19,6 +19,8 @@ Se sì, di che tipo?
 
 //se una parola è palindroma allora è uguale alla sua "inversa"
 //mi creo una costante dove andrà inserità la parola da verifcare se è palindroma
+
+/* 
 let wordTest = "";
 
 //faccio scegliere all'utente la parola da "testare"
@@ -50,7 +52,7 @@ if (wordTest === reversedWord(wordTest)) {
     console.log(`la parola ${wordTest.toUpperCase()} NON è palindroma`);
 }
 
-
+ */
 
 // altro esercizio
 
@@ -92,8 +94,7 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-//genero un numero a caso con la mia funzione e lo salvo in una costante
+//genero un numero a caso con la funzione copiata però con i paletti dati dall'esercizio e lo salvo in una costante
 
 let numberPc = getRndInteger(minRandom, maxRandom);
 console.log(numberPc);
@@ -103,7 +104,33 @@ console.log(numberPc);
 let sumEasy = numberUser + numberPc;
 console.log(sumEasy);
 
-//creo una funzione per verificare se la somma è pari o dispari
+//creo una funzione per verificare se un numero è pari o dispari
 
+function thisSumIsEven(sum) {
+    let isEven = "";
+    if (sum % 2 === 0) {
+        isEven = true;
+    } else {
+        isEven = false;
+    }
+    return isEven;
+}
 
+//test della funzione
+console.log(thisSumIsEven(139));
 
+//creo una variabile per indicare chi vince
+let winner = "";
+
+if (thisSumIsEven(sumEasy) == true && evenOddUser === "pari") {
+    winner = "Hai vinto"
+} else if (thisSumIsEven(sumEasy) == true && evenOddUser === "dispari") {
+    winner = "Pc ha vinto"
+} else if (thisSumIsEven(sumEasy) == false && evenOddUser === "pari") {
+    winner = "Pc ha vinto"
+} else if (thisSumIsEven(sumEasy) == false && evenOddUser === "dispari") {
+    winner = "Hai vinto"
+}
+
+//faccio vedere il risultato
+console.log(winner);
